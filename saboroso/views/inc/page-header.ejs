@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+
+<!-- EJS feature. It includes other EJS classes. In order to avoid using the same part of code in many differents pages. It is really usefull -->
+<%- include("head") -%>
+
+<body>
+
+	<div class="gtco-loader"></div>
+
+	<div id="page">
+
+    <!-- To include inc/header-menus class -->
+    <%- include('header-menus') -%>
+    
+    <% if(typeof isHome === 'boolean' && isHome ){ %> <!-- if it is Home page, to include heder-index class -->
+    
+    <!-- To include inc/header-index class -->
+    <%- include('header-index') -%>
+    
+    <% } else { %> 
+    
+    <!-- To include inc/header class -->
+	<%- include('header') -%>
+    
+    <% } %>

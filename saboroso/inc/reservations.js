@@ -1,0 +1,44 @@
+let conn = require('./db');
+
+module.exports = {
+
+    // method that is used in the routes/index.js
+    render(req,res,error,success){  
+        res.render('reservations', {
+            title: 'Reservas - Restaurante Saboroso!',
+            background: 'images/img_bg_2.jpg',
+            h1: 'Reserve uma Mesa!',
+            body: req.body,
+            error,
+            success
+        });
+    },
+
+    // method to save information
+    save(fields){
+
+        return new Promise((resolve,reject) =>{
+
+            let date = fields.date.split('/');
+
+            fields.date = `${date[2]}-${date[1]}-${date[0]}`;
+
+            // conn.query(query, parameters, callback)
+            conn.query(`
+                INSERT INTO tb_reservations (name,email,people,date,time) VALUES (?,?,?,?,?)
+            `,[
+                fields.name,
+                fields.email,
+                fields.people,
+                fields.date,
+                fields.time
+            ],(err,results) =>{
+                if(err){
+                    reject(err); 
+                }else{
+                    resolve(results);
+                }
+            });
+        });
+    }
+};

@@ -1,0 +1,12 @@
+<!-- In case there is any field missing, an error message will be shown -->
+<% if(typeof error === "string"){ %>
+<div class="alert alert-danger">
+<%= error %>
+</div>
+<%  } %>
+<!-- In case reservation is succesfully saved, a success message will be shown -->
+<% if(typeof success === "string"){ %>
+<div class="alert alert-success">
+<%= success %>
+</div>
+<%  } %> 
