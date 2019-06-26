@@ -1,4 +1,4 @@
-// The routes/index.js is defined is the app.js 
+// The routes/index.js is defined is the app.js //
 
 // to import connection class "db".  It is possible because the class was exported (module.export)
 var conn = require ('./../inc/db');
