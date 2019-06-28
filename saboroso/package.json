@@ -1,6 +1,9 @@
 {
   "name": "saboroso",
   "version": "0.0.0",
+  "engines": {
+    "node": "10.15.3"
+  },
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
@@ -19,3 +22,4 @@
     "mocha": "^6.1.4"
   }
 }
+
