@@ -19,7 +19,7 @@
     "mysql2": "^1.6.5"
   },
   "devDependencies": {
-    "mocha": "^6.1.4"
+    "mocha": "^10.2.0"
   }
 }
 
